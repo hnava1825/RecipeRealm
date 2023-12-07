@@ -2,7 +2,7 @@ const express = require('express');
 const fetch = require('node-fetch');
 const cors = require('cors');
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 const CACHE_TTL = 10 * 60 * 1000; // 10 minutes
 const cache = {};
@@ -36,6 +36,6 @@ app.get('/recipes', async (req, res) => {
     }
 });
 
-app.listen(3001, (https://reciperealm-gky2.onrender.com/) => {
+app.listen(3001, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
