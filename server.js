@@ -36,6 +36,6 @@ app.get('/recipes', async (req, res) => {
     }
 });
 
-app.listen(3001, () => {
+app.listen(3001, (https://reciperealm-gky2.onrender.com/) => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
