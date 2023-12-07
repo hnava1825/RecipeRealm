@@ -7,7 +7,7 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 
 // Your API key and other configurations
-const YOUR_API_KEY = 'YOUR_API_KEY'; // Replace with your actual API key
+const YOUR_API_KEY = '4c2e54b20ade8b779dd3804fa7bdb679'; // Replace with your actual API key
 const baseUrl = `https://api.edamam.com/search?app_id=YOUR_APP_ID&app_key=${YOUR_API_KEY}`;
 const CACHE_TTL = 3600000; // Cache TTL in milliseconds (1 hour)
 const cache = {}; // Cache object to store responses
