@@ -15,14 +15,14 @@ txtSearch.addEventListener("keyup", (e) => {
 suggestionLinks.forEach(link => {
     link.addEventListener("click", (e) => {
         e.preventDefault(); // Prevent the default anchor click behavior
-        const type = e.target.getAttribute("data-type");
+        const type = e.target.textContent;
         loadRecipes(type);
     });
 });
 
 /* Recipe Loader */
 function loadRecipes(type = "Meal Prep") {
-    const url = `/recipes?type=${type}`;
+    const url = `http://localhost:3000/recipes?type=${type}`;
     const loader = document.getElementById('loader');
     const errorMsg = document.getElementById('errorMsg');
     loader.style.display = 'block';
@@ -45,11 +45,21 @@ function loadRecipes(type = "Meal Prep") {
             errorMsg.style.display = 'block';
         });
 }
+// home button back to home page
 
-/* Recipe Renderer */
+const btnHome = document.querySelector("#btnHome");
+
+btnHome.addEventListener("click", (e) => {
+    e.preventDefault(); // Prevent the default anchor click behavior
+    txtSearch.value = ""; // Clear the search box
+    loadRecipes(); // Load the default recipes
+});
+
 function renderRecipes(recipes) {
     recipesContainer.innerHTML = "";
     recipes.forEach((recipe) => {
+        // Check if the data structure contains the information as expected
+        // Make sure to adapt this part if the data structure is different
         const recipeCard = document.createElement("div");
         recipeCard.classList.add("recipe-card");
         recipeCard.innerHTML = `
@@ -66,13 +76,4 @@ function renderRecipes(recipes) {
     });
 }
 
-/* Home Button */
-const btnHome = document.querySelector("#btnHome");
-
-btnHome.addEventListener("click", (e) => {
-    e.preventDefault();
-    txtSearch.value = "";
-    loadRecipes("Meal Prep"); // Load the default recipes
-});
-
-loadRecipes("Meal Prep"); // Load initial recipes
+loadRecipes();  // Load initial recipes
