@@ -36,6 +36,6 @@ app.get('/recipes', async (req, res) => {
     }
 });
 
-app.listen(PORT, () => {
+app.listen(3001, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
