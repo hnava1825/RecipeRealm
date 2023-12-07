@@ -1,62 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="x-ua-compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="app.js" defer></script>
-  <title>Recipe Finder</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Recipe Finder</title>
 </head>
-
 <body>
-<header>
-  <h2>Recipe Realm</h2>
-</header>
-<section class="container">
-
-  <!-- Search Section -->
-  <div class="search">
-    <div class="home-button">
-      <a href="#" id="btnHome" class="btn">Home</a>
-    </div>
-    <label for="txtSearch"></label>
-    <input type="text" id="txtSearch" placeholder="Search Recipes" autofocus />
-    <button class="btn" id="btnFind">Find</button>
-  </div>
-
-
-  <!-- Subheader with Suggestions -->
-  <div class="subheader">
-    <a href="#" class="suggestion-link">Italian</a>
-    <a href="#" class="suggestion-link">Indian</a>
-    <a href="#" class="suggestion-link">Mexican</a>
-    <a href="#" class="suggestion-link">Chinese</a>
-    <a href="#" class="suggestion-link">Dessert</a>
-    <a href="#" class="suggestion-link">Meal Prep</a>
-
-  </div>
-
-  <!-- Loader & Error Messages -->
-  <div class="loader" id="loader">Loading...</div>
-  <div class="error-message" id="errorMsg"></div>
-
-  <!-- Recipe Container -->
-  <div id="recipe-container">
-    <div class="recipe-card">
-      <div class="recipe-text-content">
-        <div class="recipe-title">Meal-Prep Curried Chicken Bowls</div>
-        <div class="recipe-details">Calories: 1424.54</div>
-        <div class="recipe-details">Diet Label: Low-Sodium</div>
-        <!-- More details here -->
-        <button class="btn">View Recipe</button>
-      </div>
-    </div>
-
-  </div>
-</section>
+    <header>
+        <h2>Recipe Realm</h2>
+    </header>
+    <section class="container">
+        <!-- Search Section -->
+        <div class="search">
+            <label for="txtSearch"></label>
+            <input type="text" id="txtSearch" placeholder="Search Recipes" autofocus />
+            <button class="btn" id="btnFind">Find</button>
+        </div>
+        <!-- Subheader with Suggestions -->
+        <div class="subheader">
+            <a href="#" class="suggestion-link" data-type="Italian">Italian</a>
+            <a href="#" class="suggestion-link" data-type="Indian">Indian</a>
+            <a href="#" class="suggestion-link" data-type="Mexican">Mexican</a>
+            <a href="#" class="suggestion-link" data-type="Chinese">Chinese</a>
+            <a href="#" class="suggestion-link" data-type="Dessert">Dessert</a>
+            <a href="#" class="suggestion-link" data-type="Meal Prep">Meal Prep</a>
+        </div>
+        <!-- Loader & Error Messages -->
+        <div class="loader" id="loader">Loading...</div>
+        <div class="error-message" id="errorMsg"></div>
+        <!-- Recipe Container -->
+        <div id="recipe-container"></div>
+    </section>
+    <script src="app.js" defer></script>
 </body>
-
 </html>
